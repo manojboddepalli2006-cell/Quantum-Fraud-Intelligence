@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #030509;
+    --bg-secondary: #070B12;
+    --bg-panel: rgba(10, 15, 24, 0.72);
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --glass-surface: rgba(255, 255, 255, 0.03);
+    --text-primary: #F1F5F9;
+    --text-muted: #94A3B8;
+    --accent-cyan: #06B6D4;
+    --accent-violet: #8B5CF6;
+  }
+
+  html.light {
+    --bg-primary: #F4F7FA;
+    --bg-secondary: #E9EFF6;
+    --bg-panel: rgba(255, 255, 255, 0.82);
+    --border-glass: rgba(20, 30, 45, 0.10);
+    --glass-surface: rgba(255, 255, 255, 0.65);
+    --text-primary: #0F172A;
+    --text-muted: #475569;
+    --accent-cyan: #0284C7;
+    --accent-violet: #7C3AED;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    transition: background-color 400ms ease, color 400ms ease;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono, code, .tabular-nums {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Accessible keyboard navigation focus ring */
+  *:focus-visible {
+    outline: 2px solid #06B6D4;
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion preference support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.4);
+}
+
+/* Subtle glassmorphism utilities matching theme specs */
+.glass-panel {
+  background: var(--bg-panel);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  transition: background-color 400ms ease, border-color 400ms ease;
+}
+
+.glass-panel-subtle {
+  background: var(--glass-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  transition: background-color 400ms ease, border-color 400ms ease;
+}
+
+.quantum-grid-bg {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.07) 0%, transparent 60%),
+    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Q-FraudX — Quantum Fraud Intelligence",
+  "description": "Quantum Intelligence. Real-Time Fraud Defense. Advanced quantum-enhanced credit card fraud detection, variational risk modeling, and explainable AI analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
